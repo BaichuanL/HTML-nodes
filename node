@@ -1,0 +1,321 @@
+// HTML初识
+// HTML (Hyper Text Markup Language): 超文本标记语言
+// 1. 可以加入图片、声音、动画、多媒体等内容（超越文本限制 ）
+// 2. 它还可以从一个文件跳转到另一个文件，与世界各地主机的文件连接（超级链接文本）。
+
+// 双标签
+// <标签名> 内容 </标签名>   比如<body>我是文字</body>
+
+// 单标签
+// <标签名 />  比如 <br />或<br>
+
+// lang <html lang="en">  
+
+// lang的作用
+// 告诉搜索引擎做精确的识别
+// 让语法检查程序做语言识别
+// 帮助翻译工具做识别
+// 帮助网页阅读程序做识别
+
+// Character set 是多个字符的集合,计算机要准确的处理各种字符集文字，需要进行字符编码，以便计算机能够识别和存储各种文字。
+// <meta charset="UTF-8" />
+
+// meta viewport的用法
+// 通常viewport是指视窗、视口。浏览器上用来显示网页的那部分区域。在移动端和pc端视口是不同的，pc端的视口是浏览器窗口区域，而在移动端有三个不同的视口概念：布局视口、视觉视口、理想视口
+// meta有两个属性name 和 http-equiv
+
+// name属性的取值
+// keywords(关键字) 告诉搜索引擎，该网页的关键字
+// description(网站内容描述) 用于告诉搜索引擎，你网站的主要内容。
+// viewport(移动端的窗口)
+// robots(定义搜索引擎爬虫的索引方式) robots用来告诉爬虫哪些页面需要索引，哪些页面不需要索引
+// author(作者)
+// generator(网页制作软件）
+// copyright(版权)
+
+// http-equiv有以下参数
+// http-equiv相当于http的文件头作用，它可以向浏览器传回一些有用的信息，以帮助正确和精确地显示网页内容
+// content-Type 设定网页字符集(Html4用法，不推荐)
+// Expires(期限) ,可以用于设定网页的到期时间。一旦网页过期，必须到服务器上重新传输。
+// Pragma(cache模式),是用于设定禁止浏览器从本地机的缓存中调阅页面内容，设定后一旦离开网页就无法从Cache中再调出
+// Refresh(刷新),自动刷新并指向新页面。
+// cache-control（请求和响应遵循的缓存机制）
+
+// -- 常用标签 --
+// #region
+// 1. 布局标签 
+// 标题标签 h(h1~h6)
+// 段落标签 p,可以把 HTML 文档分割为若干段落
+// 水平线标签 hr
+// 换行标签 br
+// div和span标签:是没有语义的,是我们网页布局最主要的2个盒子。
+
+// 2. 排版标签
+// b和strong - 文字以粗体显示
+// i和em - 文字以斜体显示
+// s和del - 文字以加删除线显示
+// u和ins - 文字以加下划线显示
+
+// 3. 标签属性(行内式)
+// <标签名 属性1="属性值1" 属性2="属性值2" …> 内容 </标签名>
+
+// 4. 图像标签img
+// src - 属性：URL - 图像的路径
+// alt - 属性：文本 - 图像不能显示时的替换文本
+// title - 属性：文本 - 鼠标悬停时显示的内容
+// width - 属性：像素 - 图像的宽度
+// height - 属性：像素 - 图像的高度
+// border - 属性：数字 - 图像边框的宽度
+
+// 5. 链接标签
+// href	- 用于指定链接目标的url地址，（必须属性）当为标签应用href属性时，它就具有了超链接的功能
+// target - 用于指定链接页面的打开方式，_self为默认值，_blank为在新窗口中打开方式。
+// 锚点定位：通过创建锚点链接，用户能够快速定位到目标内容。
+// 1. 使用相应的id名标注跳转目标的位置。 (找目标)
+//   <h3 id="two">第2集</h3> 
+// 2. 使用<a href="#id名">链接文本</a>创建链接文本（被点击的） 
+//   <a href="#two"> 
+
+// 6. 注释标签
+// 注释内容前后各一个空格字符，注释位于要注释代码的上面，单独占一行
+
+// 7. 路径
+// 同一级路径 - 只需要输入路径名称
+// 下一级路径 - “/” - 文件位于同级文件夹下
+// 上一级路径 - “../” - 如果是上两级需要 “../../”
+
+// 8. 其他
+// 特殊字符
+// #endregion 
+
+
+// -- 表格 --
+// #region
+// 1. 表格
+// 常见显示、展示表格式数据。因为它可以让数据显示的非常的规整，可读性非常好。特别是后台展示数据的时候表格运用是否熟练就显得很重要。
+
+// 2. 创建表格
+
+//<table>
+//   <tr>
+//      <td>单元格内的文字</td>
+//      ...
+//   </tr>
+//   ...
+//</table>
+
+//  table、tr、td，他们是创建表格的基本标签，缺一不可
+// table - 用于定义一个表格标签。
+// tr - 用于定义表格中的行，必须嵌套在 table标签中。
+// td - 用于定义表格中的单元格，必须嵌套在<tr></tr>标签中。td指表格数据（table data），即数据单元格的内容，td像一个容器，可以容纳所有的元素。
+// th - 表头单元格位于表格的第一行或第一列，并且文本加粗居中,只需用表头标签<th></th>替代相应的单元格标签<td></td>即可。
+// caption - 通常这个标题会被居中且显示于表格之上。caption 标签必须紧随 table 标签之后。这个标签只存在 表格里面才有意义。
+
+// 3. 表格属性
+// border - 设置表格边框 - 像素
+// cellspacing - 设置单元格之间的间距 - 像素
+// cellpadding - 设置单元格内容与单元格之间的间距 - 像素
+// width - 设置表格的宽度 - 像素
+// height - 设置表格的高度 - 像素
+// align - 设置表格在网页中的水平对齐方式 - left center right
+
+// 4. 合并单元格
+// 合并顺序 - 先上 后下 先左  后右,合并完之后需要删除多余的单元格。
+// 跨行合并：rowspan="合并单元格的个数"
+// 跨列合并：colspan="合并单元格的个数"
+
+// 5.表格划分结构
+// 对于比较复杂的表格，表格的结构也就相对的复杂了，所以又将表格分割成三个部分：题头、正文和脚注。而这三部分分别用:thead,tbody,tfoot来标注。
+// <thead></thead> - 用于定义表格的头部。用来放标题之类的东西。<thead> 内部必须拥有<tr> 标签！
+// <tbody></tbody> - 用于定义表格的主体。放数据本体 。
+// <tfoot></tfoot> - 放表格的脚注之类。
+// #endregion 
+
+
+// -- 列表 --
+// #region
+// 1. 无序列表 ul
+// <ul></ul>中只能嵌套<li></li>
+// <li>与</li>之间相当于一个容器，可以容纳所有元素。
+
+// <ul>
+//   <li>列表项1</li>
+//   <li>列表项2</li>
+//   <li>列表项3</li>
+//   ......
+// </ul>
+
+// 2. 有序列表 ol
+// <ol>标签中的type属性值为排序的序列号，不添加type属性时，有序列表默认从数字1开始排序。
+// 常用的type属性值分别为是1，a，A，i，I
+// <ol reversed="reversed">中的reversed属性能够让有序列表中的序列倒序排列。
+// <ol start="3">中的start属性值为3，有序列表中的第一个序列号将从3开始排列。
+
+// <ol type="A"> 
+//   <li>列表项1</li>
+//   <li>列表二</li>
+//   <li>列表三</li>
+// </ol>
+
+// 3. 自定义列表 dl
+// 定义列表常用于对术语或名词进行解释和描述，定义列表的列表项前没有任何项目符号。
+
+// <dl>
+//   <dt>名词1</dt>
+//   <dd>名词1解释1</dd>
+//   <dd>名词1解释2</dd>
+//   ...
+//   <dt>名词2</dt>
+//   <dd>名词2解释1</dd>
+//   <dd>名词2解释2</dd>
+//   ...
+// </dl>
+// #endregion 
+
+
+// -- 表单 --
+// #region
+// 一个完整的表单通常由表单控件、提示信息和表单域3个部分构成。表单目的是为了收集用户信息。
+// 表单控件 - 包含了具体的表单功能项，如单行文本输入框、密码输入框、复选框、提交按钮、重置按钮等。
+// 提示信息 - 通常包含一些说明性的文字，提示用户进行填写和操作。
+// 表单域 - 它相当于一个容器，用来容纳所有的表单控件和提示信息，可以通过他定义处理表单数据所用程序的url地址，以及数据提交到服务器的方法。如果不定义表单域，表单中的数据就无法传送到后台服务器。
+
+// 1. input 控件 <input type="属性值" value="你好">
+// <input /> 单标签 
+// type - text - 单行文本输入框
+//        password - 密码输入框
+//        radio - 单选按钮
+//        checkbox - 复选按钮
+//        button - 普通按钮
+//        submit - 提交按钮
+//        reset - 重置按钮
+//        image - 图像形式的提交按钮
+//        file - 文件域
+// 用户名: <input type="text" />
+// 密  码：<input type="password" />
+
+// name - 自定义 - 控件的名称
+// <input type="radio" name="sex"  />男
+
+// value - 自定义 - input控件中的默认文本值
+// size - 正整数 - input控件在页面中的显示宽度
+// checked - checked - 定义选择控件默认选中
+// <input type="radio" name="sex" value="男" checked="checked" />男
+
+// maxlength - 正整数 - 控件允许输入的最多字符数
+
+// 2. label标签
+// label标签主要目的是为了提高用户体验。为用户提高最优秀的服务。
+// 用于绑定一个表单元素, 当点击label标签的时候, 被绑定的表单元素就会获得输入焦点。
+// 第一种用法就是用label标签直接包含input表单， 适合单个表单选择
+// <label> 用户名： 
+//     <input type="radio" name="usename" value="请输入用户名">   
+// </label>
+
+// 第二种用法 for 属性规定 label 与哪个表单元素绑定(通过id)。
+// <label for="sex">男</label>
+// <input type="radio" name="sex"  id="sex">
+
+// 3. textarea控件(文本域)
+// input type="text" - 文本框 - 只能显示一行文本 - 单标签，通过value显示默认值	用户名、昵称、密码等
+// textarea	文本域 - 可以显示多行文本 - 双标签，默认值写到标签中间 - 留言板
+
+// 4. select下拉列表
+// 在option 中定义selected =" selected "时，当前项即为默认选中项。
+// <select>
+//   
+//   <option>选项1</option>
+//   <option>选项2</option>
+//   <option>选项3</option>
+//   ...
+// </select>
+
+// 5. form表单域
+// 收集的用户信息传递给服务器
+// <form action="url地址" method="提交方式" name="表单名称">
+//   各种表单控件
+// </form>
+// action - url地址 - 用于指定接收并处理表单数据的服务器程序的url地址。
+// method - get/post - 用于设置表单数据的提交方式，其取值为get或post。
+// name - 名称 - 用于指定表单的名称，以区分同一个页面中的多个表单。
+// #endregion  
+
+// -- H5新增内容 --
+// #region
+// 1. 什么是HTML5
+// 拥有一个强大的技术集，这些技术集是指：HTML5、CSS3、JavaScript。
+
+// 2. HTML5拓展了哪些内容
+// 语义化标签
+// 本地存储
+// 兼容特性
+// 2D、3D
+// 动画、过渡
+// CSS3特性
+// 性能与集成
+// #endregion 
+
+
+// -- HTML5新增标签 --
+// #region
+// 1. 什么是语义化
+// 语义化是指用HTML写出符合内容的结构化，选择合适的标签
+
+// 2. 新增了哪些语义化标签
+// header - 头部标签
+// nav - 导航标签
+// article - 内容标签
+// section - 块级标签
+// aside - 侧边栏标签
+// footer - 尾部标签
+
+// 3. 新增多媒体音频标签
+// 多媒体标签有两个，分别是音频 audio和视频video。
+// autoplay - autoplay - 音频在就绪后马上播放
+// controls - controls - 向用户显示控件，比如播放按钮
+// loop - loop - 当音频结束时重新开始
+// src - url - 要播放音频的url
+
+//<audio controls>                          
+// <source src="myAudio.mp3" type="audio/mpeg">
+// <source src="myAudio.ogg" type="audio/ogg">
+// <p>Your browser doesn't support HTML5 audio. Here is a 
+// <a href="myAudio.mp4">link to the audio</a>instead.</p>
+//</audio>
+
+// 4. 新增多媒体视频标签
+// <video src="./media/video.mp4" controls="controls"></video>
+// autoplay - autoplay - 视频自动播放
+// controls - controls - 向用户显示播放控件
+// width - pixels - 设置播放器宽度
+// height - pixels - 设置播放器高度
+// loop - loop - 循环播放
+// preload - auto/none - 是否加载视频(如果有autoplay就忽视该属性)
+// src - url - url地址
+// poster - imgurl - 加载等待的画面图片
+// muted - muted 静音播放
+
+// <video controls="controls" autoplay muted loop poster="./media/pig.jpg">
+//     <source src="./media/video.mp4" type="video/mp4">
+//     <source src="./media/video.ogg" type="video/ogg">
+// </video>
+
+// 5. 新增input标签
+// type = "email" - 限制用户输入必须为email类型
+// type = "url" - 限制用户输入必须为url类型
+// type = "date" - 限制用户输入必须为日期类型
+// type = "time" - 限制用户输入必须为时间类型
+// type = "month" - 限制用户输入必须为月类型
+// type = "week" - 限制用户输入必须为日类型
+// type = "number" - 限制用户输入必须为数字类型
+// type = "tel" - 手机号码
+// type = "search" - 搜索框
+// type = "color" - 生成一共颜色选择表单
+
+// 6. 新增表单属性
+// required - required - 表单拥有该属性表示其内容不能为空
+// placeholder - 提示文本 - 表单的提示信息，存在默认值将不显示
+// autofocus - autofocus - 自动聚焦属性，页面加载完成自动聚焦到指定表单
+// autocomplete - off/on - 当用户在字段开始输入时，显示
+// multiple - multiple - 可以多选文件提交
+// #endregion 
